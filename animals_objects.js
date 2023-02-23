@@ -2,20 +2,19 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
+const allAnimals = [];
 const Animal = {
     name: "-defaultname-",
     desc: "-no desc-",
     type: "-unknown-",
-    age: "-o-",
+    age: "-0-",
 }
-const allAnimals = [];
 
 function start() {
     console.log("ready");
 
     loadJSON();
 }
-
 
 function loadJSON() {
     fetch("animals.json")
@@ -25,6 +24,11 @@ function loadJSON() {
             prepareObjects(jsonData);
         });
 }
+
+
+
+
+
 
 function prepareObjects(jsonData) {
     jsonData.forEach(jsonObject => {
